@@ -10,8 +10,14 @@ import time
 import os
 import colorsys
 
-DECIMATE = 10
-bulb.turn_on()
+DECIMATE = 10 #increase this to reduce the computational requirments
+
+try:
+	bulb.turn_on()
+except:
+	print('Unable to connect to bulb. Please check the IP address.')
+	exit()
+	
 bulb.start_music()
 bulb.effect = "sudden"
 bulb.duration = 200
@@ -47,7 +53,7 @@ while True:
 		old_hsv = goal
 			
 	except Exception as e:
-		print(e)
+		pass
 
 import atexit
 atexit.register(lambda:bulb.stop_music())
