@@ -1,7 +1,7 @@
 from yeelight.transitions import *
 from yeelight import Flow, Bulb
 
-bulb_ip_address = "" #set ip adress here
+bulb_ip_address = "10.225.243.35" #set ip adress here
 
 bulb = Bulb(bulb_ip_address, effect="smooth", duration=100)
 
@@ -17,7 +17,7 @@ try:
 except:
 	print('Unable to connect to bulb. Please check the IP address.')
 	exit()
-
+	
 bulb.start_music()
 bulb.effect = "sudden"
 bulb.duration = 200
